@@ -19,8 +19,6 @@ IFS=","
 for FILE in $INPUT_TARGET_FILES
 do
   echo "copying $FILE"
-  pwd
-  ls
   cp -a "$FILE" "$TARGET_FOLDER/"
 done
 
