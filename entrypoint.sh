@@ -3,9 +3,6 @@ set -eu
 
 /setup-ssh.sh
 
-echo "$INPUT_SRC_FOLDER"
-
-
 TARGET_FOLDER="target"
 REFDATE=$(date '+%Y-%m-%d %H:%M:%S')
 
@@ -20,6 +17,8 @@ IFS=","
 for FILE in $INPUT_TARGET_FILES
 do
   echo "copying $FILE"
+  pwd
+  ls
   cp -a "$INPUT_SRC_FOLDER/$FILE" "$TARGET_FOLDER/"
 done
 
