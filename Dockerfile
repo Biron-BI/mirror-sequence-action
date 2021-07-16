@@ -5,7 +5,7 @@ RUN apk update && apk upgrade && \
 
 # Copies code files from action repository to the filesystem path `/` of the container
 COPY entrypoint.sh /entrypoint.sh
-COPY mirror.sh /mirror.sh
+COPY setup-ssh.sh /setup-ssh.sh
 
 # Code file to execute when the docker container starts up
 ENTRYPOINT ["/entrypoint.sh"]

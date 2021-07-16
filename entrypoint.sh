@@ -9,7 +9,7 @@ REFDATE=$(date '+%Y-%m-%d %H:%M:%S')
 
 export GIT_SSH_COMMAND="ssh -v -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no -l $INPUT_SSH_USERNAME"
 
-git clone "github:$GITHUB_REPOSITORY.git" "$SRC_FOLDER"
+git clone "github.com:$GITHUB_REPOSITORY.git" "$SRC_FOLDER"
 git clone "$INPUT_TARGET_REPO_URL" "$TARGET_FOLDER"
 
 IFS=","
