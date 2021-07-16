@@ -1,0 +1,20 @@
+name: "Mirroring Repository"
+description: "Mirror a repository to another git repository"
+inputs:
+  ssh_private_key:
+    description: "SSH private key for ssh connection to the target repository"
+    required: false
+  target_repo_url:
+    description: "Target url"
+    required: true
+  target_files:
+    description: "List of comma-separated directory or files that will be copied. Default: src"
+    required: false
+    default: "src"
+  ssh_username:
+    description: "Username for ssh connection. Default: git"
+    required: false
+    default: "git"
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
