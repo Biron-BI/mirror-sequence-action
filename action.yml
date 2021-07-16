@@ -8,7 +8,7 @@ inputs:
     description: "Target url"
     required: true
   target_files:
-    description: "List of comma-separated directory or files that will be copied. Default: src"
+    description: "List of comma-separated directory or files that will be copied. Paths relative to repository root. Default: src"
     required: false
     default: "src"
   ssh_username:
