@@ -18,3 +18,5 @@ inputs:
 runs:
   using: 'docker'
   image: 'Dockerfile'
+  env:
+    SRC_FOLDER: ${{ github.event.repository.name }}
