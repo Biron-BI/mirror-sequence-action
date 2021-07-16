@@ -3,7 +3,9 @@ set -eu
 
 /setup-ssh.sh
 
-TARGET_FOLDER="target"
+# We expect current directory is inside cloned one (default behaviour of action/checkout@v2)
+
+TARGET_FOLDER="../target"
 REFDATE=$(date '+%Y-%m-%d %H:%M:%S')
 
 export GIT_SSH_COMMAND="ssh -v -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no -l $INPUT_SSH_USERNAME"
@@ -19,7 +21,7 @@ do
   echo "copying $FILE"
   pwd
   ls
-  cp -a "$INPUT_SRC_FOLDER/$FILE" "$TARGET_FOLDER/"
+  cp -a "$FILE" "$TARGET_FOLDER/"
 done
 
 cd "$TARGET_FOLDER"
