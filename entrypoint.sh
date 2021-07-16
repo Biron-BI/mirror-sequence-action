@@ -23,5 +23,6 @@ do
 done
 
 cd "$TARGET_FOLDER"
-git commit -am "$REFDATE"
+git add .
+git commit -m "$REFDATE"
 git push
