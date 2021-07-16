@@ -12,14 +12,13 @@ export GIT_SSH_COMMAND="ssh -v -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no -l $
 git config --global user.name "Biron"
 git config --global user.email "support@biron-analytics.com"
 
-#git clone --depth 1 "github.com:$GITHUB_REPOSITORY.git" "$SRC_FOLDER"
 git clone --depth 1 "$INPUT_TARGET_REPO_URL" "$TARGET_FOLDER"
 
 IFS=","
 for FILE in $INPUT_TARGET_FILES
 do
   echo "copying $FILE"
-  cp "$SRC_FOLDER/$FILE" "$TARGET_FOLDER/$FILE"
+  cp -a "$SRC_FOLDER/$FILE" "$TARGET_FOLDER/$FILE"
 done
 
 cd "$TARGET_FOLDER"
