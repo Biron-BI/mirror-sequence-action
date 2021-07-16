@@ -15,8 +15,10 @@ inputs:
     description: "Username for ssh connection. Default: git"
     required: false
     default: "git"
+  src_folder:
+    description: "Folder name of cloned repo"
+    required: false
+    default: ${{ github.event.repository.name }}
 runs:
   using: 'docker'
   image: 'Dockerfile'
-  env:
-    SRC_FOLDER: ${{ github.event.repository.name }}
